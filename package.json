@@ -1,0 +1,40 @@
+{
+  "name": "CRM",
+  "version": "1.0.0",
+  "description": "CRM",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamil163/CRM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "morgan": "^1.10.0",
+    "sequelize-cli": "^6.2.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-redis": "^6.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.1.2",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.4",
+    "redis": "^3.1.2",
+    "sequelize": "^6.6.5"
+  },
+  "bugs": {
+    "url": "https://github.com/shamil163/CRM/issues"
+  },
+  "homepage": "https://github.com/shamil163/CRM#readme"
+}

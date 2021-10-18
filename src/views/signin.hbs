@@ -1,0 +1,15 @@
+<div id="container" class="container" style="width: 60vh;margin-top:5vh;">
+<form method="POST">
+  <div class="mb-3">
+    <input type="email" name="email" placeholder="Email" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <input type="password" name="password" placeholder="Пароль" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Войти</button>
+</form>
+{{#if err}}
+<span class="err">{{err}}</span>
+{{/if}}
+</div>

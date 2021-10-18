@@ -1,0 +1,32 @@
+<div id="container" data-container class="d-flex flex-column align-items-center">
+
+<form name="findEmployee" action="/employees" method="POST">
+        <div class="mb-3">
+          <input type="text" name="name" placeholder="Введите имя сотрудника" class="form-control"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Поиск сотрудника</button>
+      </form>
+
+  {{#if employees.length}}
+<h1 class=".btn-lg btn-outline-light my-2 my-sm-0 ">Всего сотрудников: {{employees.length}}</h1>
+<p></p>
+  {{#each employees}}
+  <div data-id="{{this.id}}" class=".btn-lg btn-outline-info" style="width: 60rem;">
+    <div class="row">
+      <img src="{{this.picture}}" class="col-sm-4" >
+      <h5 class="col-sm-4">Должность:   {{this.role}}</h5>
+      <h5 class="col-sm-4">Email:   {{this.email}}</h5>
+      <h5 class="col-sm-4">Имя:   {{this.name}}</h5>
+      <h5 class="col-sm-4">Отдел:   {{this.dataValues.Department.name}}</h5>
+      <h5 class="col-sm-4">Команда:   {{this.dataValues.Team.name}}</h5>
+      <div class="alert alert-info" role="alert"><a href="/employees/edit/{{this.id}}" class="alert-link">Редактирование сотрудника</a>
+      <p></p>
+    </div>
+  </div>
+  {{/each}}
+  {{else}}
+  <p class=".btn-lg btn-outline-light my-2 my-sm-0 ">Сотрудников нет</p>
+  {{/if}}
+</div>
+

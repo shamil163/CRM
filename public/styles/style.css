@@ -1,0 +1,16 @@
+.background {
+  background-image: url(https://www.look.com.ua/large/201805/282464.jpg);
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+.but {
+display: flex;
+justify-content: space-evenly;
+margin-top: 200px;
+}
+
+
+  

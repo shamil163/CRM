@@ -1,0 +1,50 @@
+<div class="container" data-container style="margin-top:5vh;" class="d-flex flex-column align-items-center">
+  <div class="row">
+    <h1 class=".btn-lg btn-outline-light my-2 my-sm-0 ">Всего отделов: {{departments.length}}</h1>
+    <div class="col-sm-4">
+      <p></p>
+      {{#if admin}}
+      <form name="newDep" method="POST">
+        <div class="mb-3">
+          <input type="text" name="name" placeholder="Название отдела" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <input type="text" name="description" placeholder="Описание отдела" class="form-control"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить новый отдел</button>
+      </form>
+      {{/if}}
+
+
+      <form name="findDep" action="/departments/find" method="POST">
+        <div class="mb-3">
+          <input type="text" name="name" placeholder="Введите название отдела" class="form-control"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Поиск отдела</button>
+      </form>
+    </div>
+    <div class="col-sm-8">
+      {{#if departments.length}}
+      {{#each departments}}
+      <div class="depContainer">
+        <div data-id="{{this.id}}" class=".btn-lg btn-outline-info my-2 my-sm-0" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <h5 class="card-title">Описание отдела: {{this.description}}</h5>
+            <div class="alert alert-info" role="alert"><a href="/departments/{{this.id}}" class="alert-link">Сотрудники
+                департамента</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+      {{else}}
+      <p>Департаментов нет</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+</div>

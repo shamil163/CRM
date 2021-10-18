@@ -1,0 +1,49 @@
+<div id="container" data-container style="margin-top: 5vh;" class="d-flex flex-column align-items-center">
+  <h1 class=".btn-lg btn-outline-light my-2 my-sm-0 ">Всего команд: {{teams.length}}</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <p></p>
+      {{#if admin}}
+      <form name="newTeam" method="POST">
+        <div class="mb-3">
+          <input type="text" name="name" placeholder="Название команды" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <input type="text" name="description" placeholder="Описание команды" class="form-control"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить новую команду</button>
+      </form>
+      {{/if}}
+
+       <form name="findTeam" action="/teams/find" method="POST">
+        <div class="mb-3">
+          <input type="text" name="name" placeholder="Введите название команды" class="form-control"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Найти команду</button>
+      </form>
+    </div>
+    <div class="col-sm-6">
+      {{#if teams.length}}
+      {{#each teams}}
+      <div class="teamContainer">
+        <div data-id="{{this.id}}" class=".btn-lg btn-outline-info my-2 my-sm-0" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <h5 class="card-title">Чем занимается: {{this.description}}</h5>
+            <div class="alert alert-info" role="alert"><a href="/teams/{{this.id}}" class="alert-link">Участники
+                команды</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+      {{else}}
+      <p>Команд нет</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+<div
